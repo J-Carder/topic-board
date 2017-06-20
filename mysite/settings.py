@@ -24,12 +24,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '@xn7dgj%t38jemj33khzreeh3qpeh^)$qd4lhl@_ybjegwf=&o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-try:
-    from local_settings import *
-    DEBUG = False
-except ImportError as e:
-    pass
-    DEBUG = True
+DEBUG = False
 
 
 # Application definition
