@@ -1,0 +1,50 @@
+{% extends 'threads/base.html' %}
+{% load bootstrap3 %}
+
+{% block header %}
+
+    <style type="text/css">
+        p {
+            font-size: 1.6rem;
+        }
+    </style>
+  
+  <div class="panel panel-default">
+    <div class="panel-body" style="padding-top: 0;">
+        <h2>{{ topic }} - {{ topic.name }}</h2>
+        <h3 style="color: #777;">{{ topic.date|date:'m/d/y (D) H:i:s' }} - ({{ topic.id }})</h3>
+
+        <p>{{ topic.description }}</p>
+    </div>
+  </div>
+
+{% endblock header %}
+
+{% block content %}
+
+    <p>
+        <a href="{% url 'new_message' topic.id %}">Reply to '{{ topic.text }}'</a>
+        <span style="float: right;">R:<span class="badge">{{ messages.all|length }}</span></span>
+
+    </p>
+
+
+    {% for message in messages %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ message.name }} - {{ message.date|date:'m/d/y (D) H:i'}}</h3>
+      </div>
+      <div class="panel-body">
+        <p>{{ message.text|linebreaks}}</p>
+      </div>
+    </div>
+
+
+
+    {% empty %}
+
+    <p>No replies have been submitted yet.</p>
+
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'threads/base.html' %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>Create a new thread:</h2>
+{% endblock header %}
+
+{% block content %}
+
+<form action="{% url 'new_thread' %}" method="post">
+
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+    <button name="submit" class="btn btn-success">Create thread</button>
+    {% endbuttons %}
+
+</form>
+
+{% endblock content %}
