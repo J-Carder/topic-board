@@ -24,7 +24,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '@xn7dgj%t38jemj33khzreeh3qpeh^)$qd4lhl@_ybjegwf=&o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-BOOTSTRAP3 ={
+BOOTSTRAP3 = {
     'include_jquery': True,
     }
 
@@ -158,11 +158,8 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     # Only Heroku allowed to host Topic Board
     ALLOWED_HOSTS = ['topicboard.herokuapp.com']
 
-
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
 
     # Extra places for collectstatic to find static files.
     STATICFILES_DIRS = (
@@ -170,5 +167,3 @@ if cwd == '/app' or cwd[:4] == '/tmp':
         # Always use forward slashes, even on Windows.
         # Don't forget to use absolute paths, not relative paths.
     )
-
-

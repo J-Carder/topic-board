@@ -32,6 +32,7 @@ def thread(request, topic_id):
     context = {'topic': topic, 'topics': topics, 'messages': messages}
     return render(request, 'threads/thread.html', context)
 
+
 def new_thread(request):
     """Create new thread"""
     # to display badge beside 'threads' at the top of the page
@@ -49,6 +50,7 @@ def new_thread(request):
 
     context = {'form': form, 'topics': topics}
     return render(request, 'threads/new_thread.html', context)
+
 
 def new_message(request, topic_id):
     """Create new reply"""
@@ -70,5 +72,3 @@ def new_message(request, topic_id):
 
     context = {'form': form, 'topic': topic, 'topics': topics}
     return render(request, 'threads/new_message.html', context)
-
-

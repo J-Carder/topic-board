@@ -17,4 +17,5 @@ urlpatterns = [
     # page for replying to a thread
     url(r'^new_message/(?P<topic_id>\d+)/$', views.new_message,
         name='new_message'),
+
 ]
